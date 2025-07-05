@@ -1,98 +1,102 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📊 ParsePay
 
-# Getting Started
+> Effortless Expense Tracking from Your SMS Inbox 💸
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+ParsePay is an intelligent Android app that automatically tracks your expenses by parsing your incoming SMS messages. No need to manually log your transactions — ParsePay extracts payment information in real-time and visualizes your spending patterns, securely and offline.
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## ✨ Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- 📩 **SMS Parsing**: Detects transactional messages using pattern matching and regex.
+- 💰 **Expense Categorization** *(coming soon)*: Auto-classifies expenses by vendor or category.
+- 📈 **Offline Insights**: Works completely offline using local storage.
+- 🔐 **Privacy-First**: No data leaves your device. No ads, no tracking.
+- 📊 **Simple Visuals** *(coming soon)*: Pie charts, trend lines, and daily summaries.
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
+## 🚀 Demo
+
+https://user-images.githubusercontent.com/YOUR-USERNAME/demo.mp4 *(Insert a screen recording or gif here)*
+
+---
+
+## 📲 Getting Started
+
+### Prerequisites
+
+- Android device/emulator
+- Node.js & npm
+- React Native CLI
+- Android Studio with SDK installed
+
+### Installation
+
+```bash
+git clone https://github.com/divyanshsirohi/ParsePay.git
+cd ParsePay
+npm install
+npx react-native run-android
 ```
+## 🔐 Permissions
 
-## Step 2: Build and run your app
+The app requires the following Android permissions:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+- `RECEIVE_SMS`: To listen for new incoming SMS messages.
+- `READ_SMS`: To access and parse existing transactional messages.
 
-### Android
+These permissions are requested on first launch. If denied, SMS-based expense tracking will not work.
 
-```sh
-# Using npm
-npm run android
+---
 
-# OR using Yarn
-yarn android
-```
+## 🧠 How It Works
 
-### iOS
+1. Listens for incoming SMS using `react-native-android-sms-listener`.
+2. Filters messages that appear to be transaction-related (e.g., debits, credits, UPI).
+3. Applies regex patterns to extract:
+   - Amount
+   - Transaction type (credit/debit)
+   - Merchant or bank name
+   - Date and time
+4. Saves the parsed data locally using `AsyncStorage`.
+5. Displays a simple list of transactions (analytics coming soon).
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+---
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## 📦 Tech Stack
 
-```sh
-bundle install
-```
+- **React Native**
+- **JavaScript (ES6+)**
+- **AsyncStorage** – for local persistence
+- **Regex-based parsing**
+- **Android SMS Receiver API**
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 🛠️ Roadmap
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+- [x] SMS permission request + handling
+- [x] Real-time SMS parsing on incoming messages
+- [x] Basic local expense storage
+- [ ] Pie chart and line chart views
+- [ ] Search and filter by amount/date/merchant
+- [ ] CSV export or cloud sync (Google Drive)
+- [ ] SQLite or Realm integration for performance
+- [ ] Optional notification for daily spend summary
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 📸 Screenshots
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## 👨‍💻 Author
 
-## Step 3: Modify your app
+Developed by [Divyansh Sirohi](https://github.com/divyanshsirohi)
 
-Now that you have successfully run the app, let's make changes!
+---
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## ⭐️ Support
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# ParsePay
+If this app helps you save time managing expenses, consider giving it a ⭐️ on GitHub!
